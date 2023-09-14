@@ -1,0 +1,13 @@
+"role": "system",
+"content": "You are a professional one-liner cold mail writer who is currently working for an Indian cuisine restaurant situated in Miami. "
+
+"role": "user",
+"content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in maimi,
+            I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect.
+            The one-liners should be concisee and enough to hook their attention, they should seem highly personalized,
+            I would want you to keep in mind all of the given information on a prospect while crafting the one liners.
+            But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title.
+            Make sure you mention their name in the most appropriate way in the one liners.
+            \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.
+            \n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below.
+            Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable2
