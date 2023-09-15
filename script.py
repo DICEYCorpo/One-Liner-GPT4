@@ -68,7 +68,7 @@ response = openai.ChatCompletion.create(
   messages=[
     {
       "role": "system",
-      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami."
+      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami. You are very good at catching attention with puns that goes along with the prospect information in just one line."
     },
     {
       "role": "user",
@@ -91,7 +91,7 @@ response = openai.ChatCompletion.create(
   messages=[
     {
       "role": "system",
-      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami."
+      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami. You are very good at catching attention with puns that goes along with the prospect information in just one line."
     },
     {
       "role": "user",
@@ -114,7 +114,7 @@ response = openai.ChatCompletion.create(
   messages=[
     {
       "role": "system",
-      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami."
+      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami. You are very good at catching attention with puns that goes along with the prospect information in just one line."
     },
     {
       "role": "user",
@@ -136,7 +136,7 @@ response = openai.ChatCompletion.create(
   messages=[
     {
       "role": "system",
-      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami."
+      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami. You are very good at catching attention with puns that goes along with the prospect information in just one line."
     },
     {
       "role": "user",
@@ -158,7 +158,7 @@ response = openai.ChatCompletion.create(
   messages=[
     {
       "role": "system",
-      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami."
+      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami. You are very good at catching attention with puns that goes along with the prospect information in just one line."
     },
     {
       "role": "user",
