@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 import openai
 import csv
-import re
+from io import StringIO
 
 load_dotenv()
 
@@ -44,18 +44,25 @@ result = '\n'.join(formatted_rows)
 lines = result.split('\n')
 
 # Calculate the number of lines per variable
-lines_per_variable = len(lines) // 3
+total_lines = len(lines)
+lines_per_variable = total_lines // 5
 
-# Divide the lines into three variables
+# Divide the lines into five variables
 variable1 = '\n'.join(lines[:lines_per_variable])
 variable2 = '\n'.join(lines[lines_per_variable:2*lines_per_variable])
-variable3 = '\n'.join(lines[2*lines_per_variable:])
-
+variable3 = '\n'.join(lines[2*lines_per_variable:3*lines_per_variable])
+variable4 = '\n'.join(lines[3*lines_per_variable:4*lines_per_variable])
+variable5 = '\n'.join(lines[4*lines_per_variable:])
+print(variable1)
+print(variable2)
+print(variable3)
+print(variable4)
+print(variable5)
 
 
 openai.api_key = os.getenv("OPENAIAPI")
 
-print("40%...")
+print("20%...")
 response = openai.ChatCompletion.create(
   model="gpt-4",
   messages=[
@@ -76,15 +83,9 @@ response = openai.ChatCompletion.create(
 )
 
 gpt_response1 = response['choices'][0]['message']['content']
-gpt_response1_list = re.split(r'\d+\.', gpt_response1)
-gpt_response1_list = [gpt_response1_list.strip() for gpt_response1_list in gpt_response1_list if gpt_response1_list.strip()]
-print("-------------------------Variables-------------------------")
-print(variable1)
-print("------------------Response-------------------------")
-print(gpt_response1)
-print("list length:",len(gpt_response1_list))
+print("20 Response: " + gpt_response1)
 
-print("75%...")
+print("40%...")
 response = openai.ChatCompletion.create(
   model="gpt-4",
   messages=[
@@ -94,7 +95,7 @@ response = openai.ChatCompletion.create(
     },
     {
       "role": "user",
-      "content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in Miami. I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect. The one-liners should be concise yet interesting and well-written enough to hook their attention. They should seem highly personalized, and make the prospect feel noticed and special. I would want you to keep in mind all of the given information on a prospect while crafting the one liners. But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title. Use all data points if possible. Make sure you mention their name in the most appropriate way in the one liners. \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.\n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below. Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable2
+      "content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in Miami. I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect. The one-liners should be concise yet interesting and well-written enough to hook their attention. They should seem highly personalized, and make the prospect feel noticed and special. I would want you to keep in mind all of the given information on a prospect while crafting the one liners. But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title. Use all data points if possible. Make sure you mention their name in the most appropriate way in the one liners. Follow the line numbers to create the exact number of one liners. \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.\n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below. Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable2
     }
   ],
   temperature=1,
@@ -105,14 +106,9 @@ response = openai.ChatCompletion.create(
 )
 
 gpt_response2 = response['choices'][0]['message']['content']
-gpt_response2_list = re.split(r'\d+\.', gpt_response2)
-gpt_response2_list = [gpt_response2_list.strip() for gpt_response2_list in gpt_response2_list if gpt_response2_list.strip()]
-print("-------------------------Variables-------------------------")
-print(variable2)
-print("------------------Response-------------------------")
-print(gpt_response2)
-print("list length:",len(gpt_response2_list))
-print("Generating Final Response...")
+print("40 Response: " + gpt_response2)
+
+print("60%...")
 response = openai.ChatCompletion.create(
   model="gpt-4",
   messages=[
@@ -122,7 +118,7 @@ response = openai.ChatCompletion.create(
     },
     {
       "role": "user",
-      "content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in Miami. I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect. The one-liners should be concise yet interesting and well-written enough to hook their attention. They should seem highly personalized, and make the prospect feel noticed and special. I would want you to keep in mind all of the given information on a prospect while crafting the one liners. But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title. Use all data points if possible. Make sure you mention their name in the most appropriate way in the one liners. \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.\n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below. Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable3
+      "content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in Miami. I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect. The one-liners should be concise yet interesting and well-written enough to hook their attention. They should seem highly personalized, and make the prospect feel noticed and special. I would want you to keep in mind all of the given information on a prospect while crafting the one liners. But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title. Use all data points if possible. Make sure you mention their name in the most appropriate way in the one liners. Follow the line numbers to create the exact number of one liners. \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.\n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below. Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable3
     }
   ],
   temperature=1,
@@ -133,45 +129,103 @@ response = openai.ChatCompletion.create(
 )
 
 gpt_response3 = response['choices'][0]['message']['content']
-gpt_response3_list = re.split(r'\d+\.', gpt_response3)
-gpt_response3_list = [gpt_response3_list.strip() for gpt_response3_list in gpt_response3_list if gpt_response3_list.strip()]
-print("-------------------------Variables-------------------------")
-print(variable3)
-print("------------------Response-------------------------")
-print(gpt_response3)
-print("list length:",len(gpt_response3_list))
+print("60 Response: " + gpt_response3)
+print("80%...")
+response = openai.ChatCompletion.create(
+  model="gpt-4",
+  messages=[
+    {
+      "role": "system",
+      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami."
+    },
+    {
+      "role": "user",
+      "content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in Miami. I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect. The one-liners should be concise yet interesting and well-written enough to hook their attention. They should seem highly personalized, and make the prospect feel noticed and special. I would want you to keep in mind all of the given information on a prospect while crafting the one liners. But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title. Use all data points if possible. Make sure you mention their name in the most appropriate way in the one liners. Follow the line numbers to create the exact number of one liners. \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.\n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below. Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable4
+    }
+  ],
+  temperature=1,
+  max_tokens=2600,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0
+)
 
-combined_lines = gpt_response1_list+gpt_response2_list+gpt_response3_list
+gpt_response4 = response['choices'][0]['message']['content']
+print("80 Response: " + gpt_response4)
+
+response = openai.ChatCompletion.create(
+  model="gpt-4",
+  messages=[
+    {
+      "role": "system",
+      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami."
+    },
+    {
+      "role": "user",
+      "content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in Miami. I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect. The one-liners should be concise yet interesting and well-written enough to hook their attention. They should seem highly personalized, and make the prospect feel noticed and special. I would want you to keep in mind all of the given information on a prospect while crafting the one liners. But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title. Use all data points if possible. Make sure you mention their name in the most appropriate way in the one liners. Follow the line numbers to create the exact number of one liners. \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.\n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below. Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable5
+    }
+  ],
+  temperature=1,
+  max_tokens=2600,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0
+)
+
+gpt_response5 = response['choices'][0]['message']['content']
+print("Final Response: " + gpt_response5)
+
+combined_lines = gpt_response1+"\n"+gpt_response2+"\n"+gpt_response3+"\n"+gpt_response4+"\n"+gpt_response5
 
 
-input_csv_file = "One-liner details ( Tech Companies) - Sheet1.csv"
-output_csv_file = "output.csv"
+# Split the response into individual lines
+lines = combined_lines.split("\n")
 
-# Read the existing CSV file and store its content in a list of dictionaries
-data = []
-with open(input_csv_file, mode="r", newline="", encoding="utf-8") as infile:
-    reader = csv.DictReader(infile)
-    for row in reader:
-        data.append(row)
+# Remove empty lines and leading/trailing spaces
+lines = [line.strip() for line in lines if line.strip()]
 
-# Make sure the number of rows in the CSV matches the number of lines in combined_lines
-if len(data) != len(combined_lines):
-    print("Error: The number of rows in the CSV does not match the number of lines in combined_lines.")
-else:
-    # Add a new "One Liner" column to each row and populate it with the corresponding line from combined_lines
-    for i, row in enumerate(data):
-        row["One Liner"] = combined_lines[i]
+# Create a CSV buffer
+csv_buffer = StringIO()
 
-    # Write the updated data to the output CSV file
-    with open(output_csv_file, mode="w", newline="", encoding="utf-8") as outfile:
-        fieldnames = data[0].keys()
-        writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+# Define the CSV writer
+csv_writer = csv.writer(csv_buffer)
 
-        # Write the header row
-        writer.writeheader()
+# Write the header
+csv_writer.writerow(["one liners"])
 
-        # Write the data rows
-        for row in data:
-            writer.writerow(row)
+# Write each line as a row in the CSV
+for line in lines:
+    csv_writer.writerow([line])
 
-    print("CSV file has been updated with the 'One Liner' column.")
+# Reset the buffer position to the beginning
+csv_buffer.seek(0)
+
+# Save the CSV data to a file
+with open("output.csv", "w", newline="") as csv_file:
+    csv_file.write(csv_buffer.getvalue())
+
+# Close the CSV buffer
+csv_buffer.close()
+
+
+# Open and read the first CSV file (csv1)
+csv1_data = []
+with open('output.csv', 'r', newline='', encoding='utf-8', errors='ignore') as csv1_file:
+    csv_reader = csv.reader(csv1_file)
+    headers = next(csv_reader)  # Read and store the header row
+    for row in csv_reader:
+        csv1_data.append(row[0])  # Assuming "one liners" is the first column in csv1
+
+# Open and update the second CSV file (csv2)
+with open('One-liner details ( Tech Companies) - Sheet1.csv', 'r', newline='', encoding='utf-8', errors='ignore') as csv2_file:
+    csv2_data = list(csv.reader(csv2_file))
+
+# Add the "one liners" column from csv1 to csv2
+csv2_data[0].append("one liners")  # Add the column header
+for i, row in enumerate(csv2_data[1:], start=1):
+    row.append(csv1_data[i-1])  # Append the corresponding value from csv1_data
+
+# Save the updated csv2 with the added column
+with open('updated_csv2.csv', 'w', newline='', encoding='utf-8', errors='ignore') as updated_csv2_file:
+    csv_writer = csv.writer(updated_csv2_file)
+    csv_writer.writerows(csv2_data)
