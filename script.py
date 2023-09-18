@@ -68,15 +68,15 @@ response = openai.ChatCompletion.create(
   messages=[
     {
       "role": "system",
-      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami. You are very good at catching attention with puns that goes along with the prospect information in just one line."
+      "content": "You are a cold email copywriter with exceptional writing skills, who is currently working on writing highly personalized and witty custom one-liners on potential prospects focusing on their working industry. You are very good at catching attention with puns that goes along with the prospect information in just one line. You will never use words like elevate, boost, excellence, marketing and non human like words."
     },
     {
       "role": "user",
-      "content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in Miami. I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect. The one-liners should be concise yet interesting and well-written enough to hook their attention. They should seem highly personalized, and make the prospect feel noticed and special. I would want you to keep in mind all of the given information on a prospect while crafting the one liners. But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title. Use all data points if possible. Make sure you mention their name in the most appropriate way in the one liners. Follow the line numbers to create the exact number of one liners. \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.\n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below. Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable1
+      "content": "We collected information about prospects and we want them to know we did research on their backgrounds thoroughly so that we can hook their attention into reading our whole email with interest. The gathered information includes Last Post, Award/Certification, Degree, Education, Job Title. Using all of the information are necessary. Out of these the last post is very important in catching their attention and make them feel like we did a research on them. Don't offer them anything. Make it natural and goes with general business idea of solving problems with food services. Mix all the provided information to come up with witty and catchy personalized one liners for individuals. Make sure you make a pun about their last post or job title increases the chances of catching their attention more.  Follow the line numbers to create the exact number of one liners. This information are provided sequentially in the lines below. Just reply and no need to add quotations marks around the sentences. \nSome perfect one liners from information look like this:\nInformation: Yani, Office Manager, OpenStore, Notary Public Commission\nPerfect One Liner: Yani, with your notary public commission, we're confident in 'sealing' the deal on delivering a delicious culinary experience to your office.\nDon't reply me. Just give me one liners.\n\n"+variable1
     }
   ],
   temperature=1,
-  max_tokens=2600,
+  max_tokens=256,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
@@ -91,15 +91,15 @@ response = openai.ChatCompletion.create(
   messages=[
     {
       "role": "system",
-      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami. You are very good at catching attention with puns that goes along with the prospect information in just one line."
+      "content": "You are a cold email copywriter with exceptional writing skills, who is currently working on writing highly personalized and witty custom one-liners on potential prospects focusing on their working industry. You are very good at catching attention with puns that goes along with the prospect information in just one line. You will never use words like elevate, boost, excellence, marketing and non human like words."
     },
     {
       "role": "user",
-      "content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in Miami. I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect. The one-liners should be concise yet interesting and well-written enough to hook their attention. They should seem highly personalized, and make the prospect feel noticed and special. I would want you to keep in mind all of the given information on a prospect while crafting the one liners. But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title. Use all data points if possible. Make sure you mention their name in the most appropriate way in the one liners. Follow the line numbers to create the exact number of one liners. \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.\n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below. Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable2
+      "content": "We collected information about prospects and we want them to know we did research on their backgrounds thoroughly so that we can hook their attention into reading our whole email with interest. The gathered information includes Last Post, Award/Certification, Degree, Education, Job Title. Using all of the information are necessary. Out of these the last post is very important in catching their attention and make them feel like we did a research on them. Don't offer them anything. Make it natural and goes with general business idea of solving problems with food services. Mix all the provided information to come up with witty and catchy personalized one liners for individuals. Make sure you make a pun about their last post or job title increases the chances of catching their attention more.  Follow the line numbers to create the exact number of one liners. This information are provided sequentially in the lines below. Just reply and no need to add quotations marks around the sentences. \nSome perfect one liners from information look like this:\nInformation: Yani, Office Manager, OpenStore, Notary Public Commission\nPerfect One Liner: Yani, with your notary public commission, we're confident in 'sealing' the deal on delivering a delicious culinary experience to your office.\nDon't reply me. Just give me one liners.\n\n"+variable2
     }
   ],
   temperature=1,
-  max_tokens=2600,
+  max_tokens=256,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
@@ -114,15 +114,15 @@ response = openai.ChatCompletion.create(
   messages=[
     {
       "role": "system",
-      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami. You are very good at catching attention with puns that goes along with the prospect information in just one line."
+      "content": "You are a cold email copywriter with exceptional writing skills, who is currently working on writing highly personalized and witty custom one-liners on potential prospects focusing on their working industry. You are very good at catching attention with puns that goes along with the prospect information in just one line. You will never use words like elevate, boost, excellence, marketing and non human like words."
     },
     {
       "role": "user",
-      "content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in Miami. I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect. The one-liners should be concise yet interesting and well-written enough to hook their attention. They should seem highly personalized, and make the prospect feel noticed and special. I would want you to keep in mind all of the given information on a prospect while crafting the one liners. But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title. Use all data points if possible. Make sure you mention their name in the most appropriate way in the one liners. Follow the line numbers to create the exact number of one liners. \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.\n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below. Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable3
+      "content": "We collected information about prospects and we want them to know we did research on their backgrounds thoroughly so that we can hook their attention into reading our whole email with interest. The gathered information includes Last Post, Award/Certification, Degree, Education, Job Title. Using all of the information are necessary. Out of these the last post is very important in catching their attention and make them feel like we did a research on them. Don't offer them anything. Make it natural and goes with general business idea of solving problems with food services. Mix all the provided information to come up with witty and catchy personalized one liners for individuals. Make sure you make a pun about their last post or job title increases the chances of catching their attention more.  Follow the line numbers to create the exact number of one liners. This information are provided sequentially in the lines below. Just reply and no need to add quotations marks around the sentences. \nSome perfect one liners from information look like this:\nInformation: Yani, Office Manager, OpenStore, Notary Public Commission\nPerfect One Liner: Yani, with your notary public commission, we're confident in 'sealing' the deal on delivering a delicious culinary experience to your office.\nDon't reply me. Just give me one liners.\n\n"+variable3
     }
   ],
   temperature=1,
-  max_tokens=2600,
+  max_tokens=256,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
@@ -136,15 +136,15 @@ response = openai.ChatCompletion.create(
   messages=[
     {
       "role": "system",
-      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami. You are very good at catching attention with puns that goes along with the prospect information in just one line."
+      "content": "You are a cold email copywriter with exceptional writing skills, who is currently working on writing highly personalized and witty custom one-liners on potential prospects focusing on their working industry. You are very good at catching attention with puns that goes along with the prospect information in just one line. You will never use words like elevate, boost, excellence, marketing and non human like words."
     },
     {
       "role": "user",
-      "content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in Miami. I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect. The one-liners should be concise yet interesting and well-written enough to hook their attention. They should seem highly personalized, and make the prospect feel noticed and special. I would want you to keep in mind all of the given information on a prospect while crafting the one liners. But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title. Use all data points if possible. Make sure you mention their name in the most appropriate way in the one liners. Follow the line numbers to create the exact number of one liners. \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.\n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below. Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable4
+      "content": "We collected information about prospects and we want them to know we did research on their backgrounds thoroughly so that we can hook their attention into reading our whole email with interest. The gathered information includes Last Post, Award/Certification, Degree, Education, Job Title. Using all of the information are necessary. Out of these the last post is very important in catching their attention and make them feel like we did a research on them. Don't offer them anything. Make it natural and goes with general business idea of solving problems with food services. Mix all the provided information to come up with witty and catchy personalized one liners for individuals. Make sure you make a pun about their last post or job title increases the chances of catching their attention more.  Follow the line numbers to create the exact number of one liners. This information are provided sequentially in the lines below. Just reply and no need to add quotations marks around the sentences. \nSome perfect one liners from information look like this:\nInformation: Yani, Office Manager, OpenStore, Notary Public Commission\nPerfect One Liner: Yani, with your notary public commission, we're confident in 'sealing' the deal on delivering a delicious culinary experience to your office.\nDon't reply me. Just give me one liners.\n\n"+variable4
     }
   ],
   temperature=1,
-  max_tokens=2600,
+  max_tokens=256,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
@@ -158,15 +158,15 @@ response = openai.ChatCompletion.create(
   messages=[
     {
       "role": "system",
-      "content": "You are a cold email professional with exceptional writing skills, who is currently working on writing highly personalized custom one-liners on potential prospects for an Indian cuisine restaurant situated in Miami. You are very good at catching attention with puns that goes along with the prospect information in just one line."
+      "content": "You are a cold email copywriter with exceptional writing skills, who is currently working on writing highly personalized and witty custom one-liners on potential prospects focusing on their working industry. You are very good at catching attention with puns that goes along with the prospect information in just one line. You will never use words like elevate, boost, excellence, marketing and non human like words."
     },
     {
       "role": "user",
-      "content": "We're trying to sell our corporate meal boxes, we are an indian cuisine restaurant based in Miami. I will give you the information on the prospects, I want you to use the info to craft engaging custom one liners for each prospect. The one-liners should be concise yet interesting and well-written enough to hook their attention. They should seem highly personalized, and make the prospect feel noticed and special. I would want you to keep in mind all of the given information on a prospect while crafting the one liners. But, a general priority order would look like this: Last Post > Award/Certification > Degree, Education > Job Title. Use all data points if possible. Make sure you mention their name in the most appropriate way in the one liners. Follow the line numbers to create the exact number of one liners. \nGenerate catchy one liners related to the person's gathered information so that we can catch their attention through cold emails.\n\nFirst name,Title,Company,Education,Award/Certification,Degree,Last Post.\n\nThese informations are provided sequencially in the lines below. Just reply and no need to add quotations marks around the sentences. \n\n\n\n\n"+variable5
+      "content": "We collected information about prospects and we want them to know we did research on their backgrounds thoroughly so that we can hook their attention into reading our whole email with interest. The gathered information includes Last Post, Award/Certification, Degree, Education, Job Title. Using all of the information are necessary. Out of these the last post is very important in catching their attention and make them feel like we did a research on them. Don't offer them anything. Make it natural and goes with general business idea of solving problems with food services. Mix all the provided information to come up with witty and catchy personalized one liners for individuals. Make sure you make a pun about their last post or job title increases the chances of catching their attention more.  Follow the line numbers to create the exact number of one liners. This information are provided sequentially in the lines below. Just reply and no need to add quotations marks around the sentences. \nSome perfect one liners from information look like this:\nInformation: Yani, Office Manager, OpenStore, Notary Public Commission\nPerfect One Liner: Yani, with your notary public commission, we're confident in 'sealing' the deal on delivering a delicious culinary experience to your office.\nDon't reply me. Just give me one liners.\n\n"+variable5
     }
   ],
   temperature=1,
-  max_tokens=2600,
+  max_tokens=256,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
@@ -204,13 +204,36 @@ csv_buffer.seek(0)
 with open("output.csv", "w", newline="") as csv_file:
     csv_file.write(csv_buffer.getvalue())
 
+
+
 # Close the CSV buffer
 csv_buffer.close()
+
+input_file = 'output.csv'
+output_file = 'output_file.csv'
+# Create a dictionary to store the lines with unique numbers
+lines_dict = {}
+
+# Read the CSV file and store the lines with unique numbers
+with open(input_file, mode='r', encoding='utf-8', errors='ignore') as csv_file:
+    csv_reader = csv.reader(csv_file)
+    for row in csv_reader:
+        if row:
+            line = row[0]
+            number = line.split(".")[0]
+            lines_dict[number] = line
+
+# Write the unique lines to the output CSV file
+with open(output_file, mode='w', encoding='utf-8', newline='', errors='ignore') as csv_output:
+    csv_writer = csv.writer(csv_output)
+    for line in lines_dict.values():
+        csv_writer.writerow([line])
+
 
 
 # Open and read the first CSV file (csv1)
 csv1_data = []
-with open('output.csv', 'r', newline='', encoding='utf-8', errors='ignore') as csv1_file:
+with open('output_file.csv', 'r', newline='', encoding='utf-8', errors='ignore') as csv1_file:
     csv_reader = csv.reader(csv1_file)
     headers = next(csv_reader)  # Read and store the header row
     for row in csv_reader:
