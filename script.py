@@ -76,7 +76,7 @@ response = openai.ChatCompletion.create(
     }
   ],
   temperature=1,
-  max_tokens=256,
+  max_tokens=2600,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
@@ -99,7 +99,7 @@ response = openai.ChatCompletion.create(
     }
   ],
   temperature=1,
-  max_tokens=256,
+  max_tokens=2600,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
@@ -122,7 +122,7 @@ response = openai.ChatCompletion.create(
     }
   ],
   temperature=1,
-  max_tokens=256,
+  max_tokens=2600,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
@@ -144,7 +144,7 @@ response = openai.ChatCompletion.create(
     }
   ],
   temperature=1,
-  max_tokens=256,
+  max_tokens=2600,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
@@ -166,7 +166,7 @@ response = openai.ChatCompletion.create(
     }
   ],
   temperature=1,
-  max_tokens=256,
+  max_tokens=2600,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
