@@ -3,6 +3,7 @@ import os
 import openai
 import csv
 from io import StringIO
+import re
 
 load_dotenv()
 
@@ -252,3 +253,29 @@ for i, row in enumerate(csv2_data[1:], start=1):
 with open('updated_csv2.csv', 'w', newline='', encoding='utf-8', errors='ignore') as updated_csv2_file:
     csv_writer = csv.writer(updated_csv2_file)
     csv_writer.writerows(csv2_data)
+
+
+def remove_prefix(sentence):
+    return re.sub(r'^\d+\.\s', '', sentence)
+
+
+# Open the CSV file for reading and create a new CSV file for writing
+with open('updated_csv2.csv', mode='r', encoding='utf-8', errors='ignore') as csv_file, open('output_csv_refined.csv', mode='w', newline='', encoding='utf-8', errors='ignore') as output_csv:
+    csv_reader = csv.DictReader(csv_file)
+
+    # Define the field names for the output CSV
+    fieldnames = csv_reader.fieldnames
+
+    # Write the field names to the output CSV
+    csv_writer = csv.DictWriter(output_csv, fieldnames=fieldnames)
+    csv_writer.writeheader()
+
+    # Iterate through the rows in the input CSV
+    for row in csv_reader:
+        # Remove the "X. " prefix from the "one liners" column and update the row
+        row['one liners'] = remove_prefix(row['one liners'])
+
+        # Write the updated row to the output CSV
+        csv_writer.writerow(row)
+
+print("Prefix removed and saved to output.csv")
