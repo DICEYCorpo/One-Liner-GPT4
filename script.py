@@ -201,7 +201,7 @@ for line in lines:
 csv_buffer.seek(0)
 
 # Save the CSV data to a file
-with open("output.csv", "w", newline="") as csv_file:
+with open("output.csv", "w", newline="", encoding='utf-8', errors='ignore') as csv_file:
     csv_file.write(csv_buffer.getvalue())
 
 
