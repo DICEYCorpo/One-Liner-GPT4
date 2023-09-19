@@ -278,4 +278,12 @@ with open('updated_csv2.csv', mode='r', encoding='utf-8', errors='ignore') as cs
         # Write the updated row to the output CSV
         csv_writer.writerow(row)
 
-print("Prefix removed and saved to output.csv")
+
+# Specify the file path
+file_path1 = "output_file.csv"
+file_path2 = "updated_csv2.csv"
+file_path3 = "output_file.csv"
+
+os.remove(file_path1)
+os.remove(file_path2)
+os.remove(file_path3)
